@@ -10,13 +10,24 @@ import requests
 #rsp = requests.post('http://192.168.1.10:8080/test_send_receive', json=data)
 #print(rsp.text)
 
+#data = {}
+#data['CustomerID'] = 1
+#data['CustomerName'] = 'FTP'
+#data['ContactName'] = 'Hoang Nam'
+#data['Address'] = 'Ho guom'
+#data['City'] = 'Ha Noi'
+#data['PostalCode'] = '123456'
+#data['Country'] = 'Vietnam'
+#rsp = requests.post('http://192.168.1.10:8080/user/insert', json=data)
+#print(rsp.text)
+
 data = {}
 data['CustomerID'] = 1
-data['CustomerName'] = 'FTP'
-data['ContactName'] = 'Hoang Nam'
-data['Address'] = 'Ho guom'
-data['City'] = 'Ha Noi'
-data['PostalCode'] = '123456'
-data['Country'] = 'Vietnam'
+data['CustomerName'] = 'DAU'
+data['ContactName'] = 'Thanh Maria'
+data['Address'] = 'Japan'
+data['City'] = 'Osaka'
+data['PostalCode'] = '13579'
+data['Country'] = 'Jap'
 rsp = requests.post('http://192.168.1.10:8080/user/insert', json=data)
 print(rsp.text)
