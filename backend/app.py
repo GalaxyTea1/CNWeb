@@ -66,12 +66,12 @@ def get_user_by_id(customer_id):
         return jsonify({'message': result[0]}), result[1]
     return jsonify(result[0].to_json()), 200
 
-@app.route('/user/update/<int:customer_id>', methods=['PUT'])
+@app.route('/user/update/<int:customer_id>',methods=['PUT'])
 def update_user_by_id(customer_id):
     data = request.json
-    c = bo.Customer(CustomerID=customer_id, CustomerName=data['CustomerName'], ContactName=data['ContactName'], Address=data['Address'], City=data['City'], PostalCode=data['PostalCode'],Country=data['Country'])
+    c = bo.Customer(CustomerID = customer_id, CustomerName=data['CustomerName'], ContactName=data['ContactName'],Address=data['Address'], City=data['City'], PostalCode=data['PostalCode'], Country=data['Country'])
     result = do.Customer(ConnectionData).update(c)
-    return jsonify({'message': result[0]}), result[1]    
+    return jsonify({'message':result[0]}),result[1]
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
