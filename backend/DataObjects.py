@@ -87,7 +87,7 @@ class Customer:
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
             sql = "UPDATE tblcustomers SET customername=%s, contactname=%s, address=%s, city=%s, postalcode=%s, country=%s  WHERE customerid=%s"
-            cur.execute(sql, (customer.CustomerID, customer.ContactName, customer.Address, customer.City, customer.PostalCode, customer.Country, customer.CustomerID))
+            cur.execute(sql, (customer.CustomerName, customer.ContactName, customer.Address, customer.City, customer.PostalCode, customer.Country, customer.CustomerID))
             con.commit()           
             row = cur.rowcount
             if row > 0:
