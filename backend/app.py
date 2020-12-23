@@ -66,7 +66,7 @@ def get_user_by_id(customer_id):
         return jsonify({'message': result[0]}), result[1]
     return jsonify(result[0].to_json()), 200
 
-@app.route('/user/update/<int:customer_id>',methods=['PUT'])
+@app.route('/user/update/<int:customer_id>', methods=['PUT'])
 def update_user_by_id(customer_id):
     data = request.json
     c = bo.Customer(CustomerID = customer_id, CustomerName=data['CustomerName'], ContactName=data['ContactName'],Address=data['Address'], City=data['City'], PostalCode=data['PostalCode'], Country=data['Country'])
