@@ -58,7 +58,7 @@ def get_all_user():
     result = do.Customer(ConnectionData).get_all()
     return jsonify(result), 200
 
-@app.route('/user/get<int:customer_id>')
+@app.route('/user/get/<int:customer_id>')
 def get_user_by_id(customer_id):
     c = bo.Customer(CustomerID=customer_id)
     result = do.Customer(ConnectionData).get_by_id(c)
