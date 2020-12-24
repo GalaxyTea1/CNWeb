@@ -132,26 +132,26 @@ def get_all_user():
     result = do.Shipper(ConnectionData).get_all()
     return jsonify(result), 200
 
-@app.route('/user/get/<int:shipper_id>')
-def get_user_by_id(shipper_id):
-    c = bo.Shipper(ShipperID=shipper_id)
-    result = do.Shipper(ConnectionData).get_by_id(c)
-    if result[1] != 200:
-        return jsonify({'message': result[0]}), result[1]
-    return jsonify(result[0].to_json()), 200
+# @app.route('/user/get/<int:shipper_id>')
+# def get_user_by_id(shipper_id):
+#     c = bo.Shipper(ShipperID=shipper_id)
+#     result = do.Shipper(ConnectionData).get_by_id(c)
+#     if result[1] != 200:
+#         return jsonify({'message': result[0]}), result[1]
+#     return jsonify(result[0].to_json()), 200
 
-@app.route('/user/update/<int:shipper_id>', methods=['PUT'])
-def update_user_by_id(shipper_id):
-    data = request.json
-    c = bo.Shipper(ShipperID = shipper_id, ShipperName=data['ShipperName'], Phone=data['Phone'])
-    result = do.Shipper(ConnectionData).update(c)
-    return jsonify({'message':result[0]}),result[1]
+# @app.route('/user/update/<int:shipper_id>', methods=['PUT'])
+# def update_user_by_id(shipper_id):
+#     data = request.json
+#     c = bo.Shipper(ShipperID = shipper_id, ShipperName=data['ShipperName'], Phone=data['Phone'])
+#     result = do.Shipper(ConnectionData).update(c)
+#     return jsonify({'message':result[0]}),result[1]
 
-@app.route('/user/delete/<int:shipper_id>', methods=['DELETE'])
-def delete_user_by_id(shipper_id):
-    c = bo.Shipper(ShipperID=shipper_id)
-    result = do.Shipper(ConnectionData).delete(c)
-    return jsonify({'message':result[0]}),result[1]
+# @app.route('/user/delete/<int:shipper_id>', methods=['DELETE'])
+# def delete_user_by_id(shipper_id):
+#     c = bo.Shipper(ShipperID=shipper_id)
+#     result = do.Shipper(ConnectionData).delete(c)
+#     return jsonify({'message':result[0]}),result[1]
 
 
 
