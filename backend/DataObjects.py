@@ -304,7 +304,7 @@ class Shipper:
                                 port = self.ConnectionData['port'],
                                 database = self.ConnectionData['database'])
             cur = con.cursor()
-            sql = "SELECT * FROM tblshippers WHERE shiperid=%s"
+            sql = "SELECT * FROM tblshippers WHERE shipperid=%s"
             cur.execute(sql, (shipper.ShipperID,))
             con.commit()           
             row = cur.fetchone()
