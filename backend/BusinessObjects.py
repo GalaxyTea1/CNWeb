@@ -37,7 +37,7 @@ class Product:
         self.Unit = Unit
         self.Price = Price
 
-    def fetch_data(self, data)
+    def fetch_data(self, data):
         self.ProductID = data[0]
         self.ProductName = data[1]
         self.SupplierID = data[2]
@@ -63,7 +63,7 @@ class Shipper:
         self.Phone = Phone
 
 
-    def fetch_data(self, data)
+    def fetch_data(self, data):
         self.ShipperID = data[0]
         self.ShipperName = data[1]
         self.Phone = data[2]
